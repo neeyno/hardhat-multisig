@@ -1,7 +1,6 @@
 <div align="center">
  <h2 align="center">Multi-Sig Wallet</h2>
 </div>
-<hr>
 
 ## Description
 
