@@ -4,15 +4,13 @@ require("dotenv").config()
 require("@nomiclabs/hardhat-etherscan")
 require("hardhat-deploy")
 require("hardhat-gas-reporter")
-require("solidity-coverage")
-require("hardhat-contract-sizer")
+//require("solidity-coverage")
+//require("hardhat-contract-sizer")
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
 
-const RINKEBY_RPC_URL =
-    process.env.ALCHEMY_RINKEBY_URL || "https://eth-rinkeby/example..."
 const GOERLI_RPC_URL =
     process.env.ALCHEMY_GOERLI_URL || "https://eth-goerli/example..."
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x141..."
@@ -26,12 +24,6 @@ module.exports = {
     solidity: "0.8.13",
     defaultNetwork: "hardhat",
     networks: {
-        rinkeby: {
-            url: RINKEBY_RPC_URL,
-            accounts: [PRIVATE_KEY],
-            chainId: 4, // rinkeby chainId is 4
-            blockConfirmations: 6,
-        },
         goerli: {
             url: GOERLI_RPC_URL,
             accounts: [PRIVATE_KEY],
@@ -62,7 +54,6 @@ module.exports = {
     etherscan: {
         // yarn hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
         apiKey: {
-            rinkeby: ETHERSCAN_API_KEY,
             goerli: ETHERSCAN_API_KEY,
         },
     },
